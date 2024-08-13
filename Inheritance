@@ -1,0 +1,24 @@
+# Base class
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        return "Some generic sound"
+
+# Derived class
+class Dog(Animal):
+    def __init__(self, name, breed):
+        super().__init__(name)  # Call the constructor of the base class
+        self.breed = breed
+
+    def speak(self):
+        return "Woof!"
+
+# Create an instance of the derived class
+my_dog = Dog(name="Buddy", breed="Golden Retriever")
+
+# Access properties and methods
+print(f"My dog's name is {my_dog.name}.")  # Output: My dog's name is Buddy.
+print(f"My dog's breed is {my_dog.breed}.")  # Output: My dog's breed is Golden Retriever.
+print(f"My dog says: {my_dog.speak()}")  # Output: My dog says: Woof!
