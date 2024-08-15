@@ -1,0 +1,44 @@
+from abc import ABC, abstractmethod
+
+# Abstract class
+class Shape(ABC):
+    
+    @abstractmethod
+    def area(self):
+        pass
+    
+    @abstractmethod
+    def perimeter(self):
+        pass
+
+# Concrete class for Circle
+class Circle(Shape):
+    
+    def __init__(self, radius):
+        self.radius = radius
+        
+    def area(self):
+        return 3.14 * (self.radius ** 2)
+    
+    def perimeter(self):
+        return 2 * 3.14 * self.radius
+
+# Concrete class for Rectangle
+class Rectangle(Shape):
+    
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+        
+    def area(self):
+        return self.width * self.height
+    
+    def perimeter(self):
+        return 2 * (self.width + self.height)
+
+# Create instances and use them
+circle = Circle(5)
+rectangle = Rectangle(4, 6)
+
+print(f"Circle area: {circle.area()}")
+print(f"Circle perimeter
